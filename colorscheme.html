@@ -1,0 +1,71 @@
+<style>
+    .coloschemesetting{
+        width: 220px;
+        height: 285px;
+        color: #000000;
+
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+        filter: alpha(opacity=70);
+        -moz-opacity: 0.7;
+        -khtml-opacity: 0.7;
+        opacity: 0.9;
+        border: 20px #428BCA solid;
+
+        background-color: #94F3FF;
+
+        padding: 0px;
+
+        -webkit-border-radius: 190px;
+        -moz-border-radius: 190px;
+        border-radius: 190px;
+
+        -webkit-border-top-right-radius: 0px;
+        -moz-border-radius-topright: 0px;
+        border-top-right-radius: 0px;
+
+        -moz-box-shadow: -15px 29px 5px 0px #94F3FF;
+        -webkit-box-shadow: -15px 29px 5px 0px #94F3FF;
+        box-shadow: -15px 29px 5px 0px #94F3FF;
+    }
+</style>
+<script>
+    function changeColorScheme(){
+        /* Call the function in head to change the CSS link */
+        changestylesheet();
+
+        if ($("input[name=colorscheme]:checked").val() == "Red"){
+        /* change the css of coloschemesetting */
+            var redstyle = {
+                "background-color" : "#FFA2A6",
+                "-moz-box-shadow" : "-15px 29px 5px 0px #FFA2A6",
+                "-webkit-box-shadow" : "-15px 29px 5px 0px #FFA2A6",
+                "box-shadow" : "-15px 29px 5px 0px #FFA2A6",
+                "border": "20px #E74C3C solid"
+            };
+            $(".coloschemesetting").css( redstyle );
+        } else if ($("input[name=colorscheme]:checked").val() == "Blue"){
+        /* change the css of coloschemesetting */
+            var bluestyle = {
+                "background-color" : "#94F3FF",
+                "-moz-box-shadow" : "-15px 29px 5px 0px #94F3FF",
+                "-webkit-box-shadow" : "-15px 29px 5px 0px #94F3FF",
+                "box-shadow" : "-15px 29px 5px 0px #94F3FF",
+                "border": "20px #428BCA solid"
+            };
+            $(".coloschemesetting").css( bluestyle );
+        }
+        $(".floating_icon").find("img").trigger("click");
+    }
+
+</script>
+    <div class="coloschemesetting">
+        <div class="modal-header">
+            <h4 class="modal-title text-center">Chose Your Favourite Color Scheme</h4>
+        </div>
+        <div class="modal-body">
+            <input type="radio" name="colorscheme" value="Blue">Blue<br>
+            <input type="radio" name="colorscheme" value="Red">Red<br>
+            <button class="btn btn-primary" style="float:right" onclick="changeColorScheme()">Confirm</button>
+        </div>
+    </div>
+
